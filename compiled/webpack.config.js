@@ -1,0 +1,49 @@
+// You shouldn't have to touch this webpack file.
+
+// IF WEBPACK IS NOT WORKING
+// and you are getting error messages indicating an incompatibility in versions,
+// make sure you are running a version of webpack which is compatible with
+// this configuration file (e.g. 2.3)
+// Install such a version of webpack using this command:
+// npm install -g webpack@2.3
+
+// Webpack is a module bundler, which means it takes modules with dependencies
+// and packages them into one bundle file. In this configuration, it also uses
+// babel to transpile the files before bundling. Webpack knows which files to include
+// by starting with the 'entry' file in the config, and following the es6 import
+// statements.
+var webpack = require('webpack');
+var path = require('path');
+
+// Build directory is where the bundle file will be placed
+var BUILD_DIR = path.resolve(__dirname, 'react-client/dist');
+// App directory is where all of your raw JSX files will be placed
+var APP_DIR = path.resolve(__dirname, 'react-client/src');
+
+// The files in the app directory will get transpiled and packaged into one
+// file, bundle.js, which will get saved in the BUILD_DIR.
+// If you use the `npm run dev-react`, webpack will generate source maps and
+// watch your files for changes.
+
+// While developing your app in react, you'll want to have two terminal tabs open -
+// one that is running `npm run dev-react` and one that is running `npm start`
+var config = {
+  entry: APP_DIR + '/index.jsx',
+  module: {
+    rules: [{
+      test: /\.jsx?/,
+      include: APP_DIR,
+      loader: 'babel-loader ',
+      query: {
+        presets: ['es2015', 'react']
+      }
+    }]
+  },
+  output: {
+    path: BUILD_DIR,
+    filename: 'bundle.js'
+  }
+};
+
+module.exports = config;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3dlYnBhY2suY29uZmlnLmpzIl0sIm5hbWVzIjpbIndlYnBhY2siLCJyZXF1aXJlIiwicGF0aCIsIkJVSUxEX0RJUiIsInJlc29sdmUiLCJfX2Rpcm5hbWUiLCJBUFBfRElSIiwiY29uZmlnIiwiZW50cnkiLCJtb2R1bGUiLCJydWxlcyIsInRlc3QiLCJpbmNsdWRlIiwibG9hZGVyIiwicXVlcnkiLCJwcmVzZXRzIiwib3V0cHV0IiwiZmlsZW5hbWUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7QUFFQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0U7O0FBRUY7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLElBQUlBLFVBQVVDLFFBQVEsU0FBUixDQUFkO0FBQ0EsSUFBSUMsT0FBT0QsUUFBUSxNQUFSLENBQVg7O0FBRUE7QUFDQSxJQUFJRSxZQUFZRCxLQUFLRSxPQUFMLENBQWFDLFNBQWIsRUFBd0IsbUJBQXhCLENBQWhCO0FBQ0E7QUFDQSxJQUFJQyxVQUFVSixLQUFLRSxPQUFMLENBQWFDLFNBQWIsRUFBd0Isa0JBQXhCLENBQWQ7O0FBRUE7QUFDQTtBQUNBO0FBQ0E7O0FBRUE7QUFDQTtBQUNBLElBQUlFLFNBQVM7QUFDWEMsU0FBT0YsVUFBVSxZQUROO0FBRVhHLFVBQVE7QUFDTkMsV0FBTyxDQUNMO0FBQ0VDLFlBQU0sUUFEUjtBQUVFQyxlQUFTTixPQUZYO0FBR0VPLGNBQVEsZUFIVjtBQUlFQyxhQUFPO0FBQ0xDLGlCQUFTLENBQUMsUUFBRCxFQUFXLE9BQVg7QUFESjtBQUpULEtBREs7QUFERCxHQUZHO0FBY1hDLFVBQVE7QUFDTmQsVUFBTUMsU0FEQTtBQUVOYyxjQUFVO0FBRko7QUFkRyxDQUFiOztBQW9CQVIsT0FBT1MsT0FBUCxHQUFpQlgsTUFBakIiLCJmaWxlIjoid2VicGFjay5jb25maWcuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBZb3Ugc2hvdWxkbid0IGhhdmUgdG8gdG91Y2ggdGhpcyB3ZWJwYWNrIGZpbGUuXG5cbi8vIElGIFdFQlBBQ0sgSVMgTk9UIFdPUktJTkdcbi8vIGFuZCB5b3UgYXJlIGdldHRpbmcgZXJyb3IgbWVzc2FnZXMgaW5kaWNhdGluZyBhbiBpbmNvbXBhdGliaWxpdHkgaW4gdmVyc2lvbnMsXG4vLyBtYWtlIHN1cmUgeW91IGFyZSBydW5uaW5nIGEgdmVyc2lvbiBvZiB3ZWJwYWNrIHdoaWNoIGlzIGNvbXBhdGlibGUgd2l0aFxuLy8gdGhpcyBjb25maWd1cmF0aW9uIGZpbGUgKGUuZy4gMi4zKVxuLy8gSW5zdGFsbCBzdWNoIGEgdmVyc2lvbiBvZiB3ZWJwYWNrIHVzaW5nIHRoaXMgY29tbWFuZDpcbiAgLy8gbnBtIGluc3RhbGwgLWcgd2VicGFja0AyLjNcblxuLy8gV2VicGFjayBpcyBhIG1vZHVsZSBidW5kbGVyLCB3aGljaCBtZWFucyBpdCB0YWtlcyBtb2R1bGVzIHdpdGggZGVwZW5kZW5jaWVzXG4vLyBhbmQgcGFja2FnZXMgdGhlbSBpbnRvIG9uZSBidW5kbGUgZmlsZS4gSW4gdGhpcyBjb25maWd1cmF0aW9uLCBpdCBhbHNvIHVzZXNcbi8vIGJhYmVsIHRvIHRyYW5zcGlsZSB0aGUgZmlsZXMgYmVmb3JlIGJ1bmRsaW5nLiBXZWJwYWNrIGtub3dzIHdoaWNoIGZpbGVzIHRvIGluY2x1ZGVcbi8vIGJ5IHN0YXJ0aW5nIHdpdGggdGhlICdlbnRyeScgZmlsZSBpbiB0aGUgY29uZmlnLCBhbmQgZm9sbG93aW5nIHRoZSBlczYgaW1wb3J0XG4vLyBzdGF0ZW1lbnRzLlxudmFyIHdlYnBhY2sgPSByZXF1aXJlKCd3ZWJwYWNrJyk7XG52YXIgcGF0aCA9IHJlcXVpcmUoJ3BhdGgnKTtcblxuLy8gQnVpbGQgZGlyZWN0b3J5IGlzIHdoZXJlIHRoZSBidW5kbGUgZmlsZSB3aWxsIGJlIHBsYWNlZFxudmFyIEJVSUxEX0RJUiA9IHBhdGgucmVzb2x2ZShfX2Rpcm5hbWUsICdyZWFjdC1jbGllbnQvZGlzdCcpO1xuLy8gQXBwIGRpcmVjdG9yeSBpcyB3aGVyZSBhbGwgb2YgeW91ciByYXcgSlNYIGZpbGVzIHdpbGwgYmUgcGxhY2VkXG52YXIgQVBQX0RJUiA9IHBhdGgucmVzb2x2ZShfX2Rpcm5hbWUsICdyZWFjdC1jbGllbnQvc3JjJyk7XG5cbi8vIFRoZSBmaWxlcyBpbiB0aGUgYXBwIGRpcmVjdG9yeSB3aWxsIGdldCB0cmFuc3BpbGVkIGFuZCBwYWNrYWdlZCBpbnRvIG9uZVxuLy8gZmlsZSwgYnVuZGxlLmpzLCB3aGljaCB3aWxsIGdldCBzYXZlZCBpbiB0aGUgQlVJTERfRElSLlxuLy8gSWYgeW91IHVzZSB0aGUgYG5wbSBydW4gZGV2LXJlYWN0YCwgd2VicGFjayB3aWxsIGdlbmVyYXRlIHNvdXJjZSBtYXBzIGFuZFxuLy8gd2F0Y2ggeW91ciBmaWxlcyBmb3IgY2hhbmdlcy5cblxuLy8gV2hpbGUgZGV2ZWxvcGluZyB5b3VyIGFwcCBpbiByZWFjdCwgeW91J2xsIHdhbnQgdG8gaGF2ZSB0d28gdGVybWluYWwgdGFicyBvcGVuIC1cbi8vIG9uZSB0aGF0IGlzIHJ1bm5pbmcgYG5wbSBydW4gZGV2LXJlYWN0YCBhbmQgb25lIHRoYXQgaXMgcnVubmluZyBgbnBtIHN0YXJ0YFxudmFyIGNvbmZpZyA9IHtcbiAgZW50cnk6IEFQUF9ESVIgKyAnL2luZGV4LmpzeCcsXG4gIG1vZHVsZToge1xuICAgIHJ1bGVzOiBbXG4gICAgICB7XG4gICAgICAgIHRlc3Q6IC9cXC5qc3g/LyxcbiAgICAgICAgaW5jbHVkZTogQVBQX0RJUixcbiAgICAgICAgbG9hZGVyOiAnYmFiZWwtbG9hZGVyICcsXG4gICAgICAgIHF1ZXJ5OiB7XG4gICAgICAgICAgcHJlc2V0czogWydlczIwMTUnLCAncmVhY3QnXVxuICAgICAgICB9XG4gICAgICB9XG4gICAgXVxuICB9LFxuICBvdXRwdXQ6IHtcbiAgICBwYXRoOiBCVUlMRF9ESVIsXG4gICAgZmlsZW5hbWU6ICdidW5kbGUuanMnXG4gIH1cbn07XG5cbm1vZHVsZS5leHBvcnRzID0gY29uZmlnO1xuIl19
