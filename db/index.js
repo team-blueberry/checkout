@@ -14,13 +14,15 @@ var productSchema = mongoose.Schema({
     soldBy : String,
     giftWrap : Boolean,
     depeartment : String,
-    protectionPlan : { twoYear : Number, fourYear : Number }
+    protectionPlanCost : { twoYear : Number, fourYear : Number }
 });
 
 var userSchema = mongoose.Schema({
     location : String,
     loggedIn : Boolean,
-    address : String
+    name : String,
+    city : String,
+    zip : Number
 });
 
 module.exports = db;
