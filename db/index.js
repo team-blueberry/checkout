@@ -1,23 +1,24 @@
 //db schema
-var mongoose = require('mongoose');
-var mongoUri = 'mongodb://localhost/amazonFEC';
+const mongoose = require('mongoose');
+const mongo = 'mongodb://localhost/amazonFEC';
 
 // Connect Mongoose to our local MongoDB via URI specified above and export it below
-var db = mongoose.connect(mongoUri);
+const db = mongoose.connect(mongo);
 
-var productSchema = mongoose.Schema({
+const productSchema = mongoose.Schema({
     price : Number,
     shippingCost : Number,
     details : String,
     quantity : Number,
-    fulfilledByAmazon : Boolean,
+    fullfilledByAmazon : Boolean,
     soldBy : String,
     giftWrap : Boolean,
-    depeartment : String,
-    protectionPlanCost : { twoYear : Number, fourYear : Number }
+    electronic : Boolean,
+    twoYearProtectionPlan : Number,
+    fourYearProtectionPlan : Number
 });
 
-var userSchema = mongoose.Schema({
+const userSchema = mongoose.Schema({
     location : String,
     loggedIn : Boolean,
     name : String,
@@ -25,4 +26,10 @@ var userSchema = mongoose.Schema({
     zip : Number
 });
 
-module.exports = db;
+
+const Product = mongoose.model('Product', productSchema);
+const User = mongoose.model('User', userSchema);
+
+
+module.exports.Product = Product;
+// module.exports.User = User;
