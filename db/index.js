@@ -1,14 +1,16 @@
 //db schema
 const mongoose = require('mongoose');
 const mongo = 'mongodb://localhost/amazonFEC';
+const {mlabUsername, mlabPassword} = require('../config.js');
+const mlab = `mongodb://${mlabUsername}:${mlabPassword}@ds111638.mlab.com:11638/amazon-fec`;
 
-const db = mongoose.connect(mongo, (err) => {
+
+const db = mongoose.connect(mlab, (err) => {
   if (err) console.log(err)
   else {
     console.log('success connecting');
   }
 });
-
 // PRODUCT SCHEMA
 const productSchema = mongoose.Schema({
     productId : Number,
@@ -26,7 +28,6 @@ const productSchema = mongoose.Schema({
 
 // USER SCHEMA
 const userSchema = mongoose.Schema({
-    userID : Number,
     location : String,
     loggedIn : Boolean,
     name : String,
@@ -37,6 +38,10 @@ const userSchema = mongoose.Schema({
 // MODELS
 const Product = mongoose.model('Product', productSchema);
 const User = mongoose.model('User', userSchema);
+
+//if exists, drop
+//Product.collection.drop();
+//User.collection.drop();
 
 // METHODS
 
@@ -54,10 +59,6 @@ var getRandomUser = () => {
   return User.findOne().skip(rand).exec();
 }
 
-var getProductWithUser = (id) => {
-
-//  Promise.all()
-}
 
 
 module.exports.getRandomUser = getRandomUser;

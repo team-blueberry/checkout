@@ -3,16 +3,14 @@ const app = express();
 const getAllProductListings = require('../db').getAllProductListings;
 const getProduct = require('../db').getProduct;
 const getRandomUser = require('../db').getRandomUser;
-
-
 const bodyParser = require('body-parser');
 
 app.use(express.static(__dirname + '/../react-client/dist/'));
 app.use(bodyParser.json());
 
-app.get('/', (req,res) => {
-  
-});
+// app.get('/', (req,res) => {
+//
+// });
 
 //get all product listings
 app.get('/listing', (req,res) => {
@@ -30,14 +28,18 @@ app.get('/listing', (req,res) => {
 
 //get single listing based on id number and random user
 app.get('/listing/:number', (req,res) => {
-  var productId = req.params.number;
-  Promise.all([getRandomUser(),getProduct(productId)]) // returns [user,product];
+  let { number } = req.params
+  Promise.all([getRandomUser(),getProduct(number)]) // returns [user,product];
   .then(values => {
     res.send(values);
   })
   .catch( err => {
     res.sendStatus(500);
   })
+})
+
+app.get('/*', (req,res) => {
+  res.redirect('/');
 })
 
 app.listen(3016, () => {

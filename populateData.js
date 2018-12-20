@@ -4,6 +4,7 @@ var User = require ('./db').User;
 
 // Connect Mongoose to our local MongoDB via URI specified above and export it below
 // DATA FOR PRODUCTS
+const populate = () => {
     fs.readFile('data/mockData.json', 'utf-8', function(err, data) {
           if (err) {
             console.log(err);
@@ -13,7 +14,7 @@ var User = require ('./db').User;
             data.map(d => {
               d.productId = id++;
               var entry = new Product(d);
-              console.log(entry);
+              //console.log(entry);
               entry.save()
               .then( (data) => {
               })
@@ -44,3 +45,8 @@ var User = require ('./db').User;
                  });
               }
             });
+    }
+
+populate();
+
+module.exports.populate = populate;
