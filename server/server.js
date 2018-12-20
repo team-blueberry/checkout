@@ -11,8 +11,7 @@ app.use(express.static(__dirname + '/../react-client/dist/'));
 app.use(bodyParser.json());
 
 app.get('/', (req,res) => {
-    //res.send('here');
-
+  
 });
 
 //get all product listings
@@ -29,34 +28,16 @@ app.get('/listing', (req,res) => {
   })
 });
 
-//get single listing based on id number
+//get single listing based on id number and random user
 app.get('/listing/:number', (req,res) => {
   var productId = req.params.number;
-  var result = {}
-  getProduct(productId)
-  .then(data => {
-    console.log('success get single product');
-    result.PRODUCT = data;
-    //res.send(data);
+  Promise.all([getRandomUser(),getProduct(productId)]) // returns [user,product];
+  .then(values => {
+    res.send(values);
   })
-  .catch(err => {
-    console.log('error with getting single product');
-    console.log(err);
-  });
-
-  getRandomUser()
-  .then(data => {
-    result.USER = data;
-    res.send(result);
-
-    //res.send(data);
+  .catch( err => {
+    res.sendStatus(500);
   })
-  .catch(err => {
-    console.log('error with getting random user');
-    console.log(err);
-  })
-
-
 })
 
 app.listen(3016, () => {
