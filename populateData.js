@@ -1,9 +1,9 @@
 var fs = require('fs');
 var Product = require('./db').Product;
+var User = require ('./db').User;
 
 // Connect Mongoose to our local MongoDB via URI specified above and export it below
 // DATA FOR PRODUCTS
-console.log(Product);
     fs.readFile('data/mockData.json', 'utf-8', function(err, data) {
           if (err) {
             console.log(err);
@@ -25,6 +25,28 @@ console.log(Product);
             });
           }
         });
+
+
+        fs.readFile('data/mockDataUser.json', 'utf-8', function(err, data) {
+              if (err) {
+                console.log(err);
+              } else {
+                //console.log(JSON.parse(data));
+                var data = JSON.parse(data);
+                //console.log(Product);
+                //console.log('prod ', Product);
+                data.map(d => {
+                  var entry = new User(d);
+                  entry.save()
+                  .then( (data) => {
+                    console.log('saved')
+                  })
+                  .catch( err => {
+                    console.log('error saving');
+                  })
+                });
+              }
+            });
 
 
         // Product.findOneAndUpdate({}{
