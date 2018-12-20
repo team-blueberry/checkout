@@ -2,7 +2,6 @@
 const mongoose = require('mongoose');
 const mongo = 'mongodb://localhost/amazonFEC';
 
-// Connect Mongoose to our local MongoDB via URI specified above and export it below
 const db = mongoose.connect(mongo, (err) => {
   if (err) console.log(err)
   else {
@@ -10,6 +9,7 @@ const db = mongoose.connect(mongo, (err) => {
   }
 });
 
+// PRODUCT SCHEMA
 const productSchema = mongoose.Schema({
     productId : Number,
     price : Number,
@@ -24,6 +24,7 @@ const productSchema = mongoose.Schema({
     fourYearProtectionPlan : Number
 });
 
+// USER SCHEMA
 const userSchema = mongoose.Schema({
     userID : Number,
     location : String,
@@ -33,12 +34,23 @@ const userSchema = mongoose.Schema({
     zip : Number
 });
 
-
-
-
+// MODELS
 const Product = mongoose.model('Product', productSchema);
 const User = mongoose.model('User', userSchema);
+
+// METHODS
+
+//get all listings from db
+var getAllProductListings = () => {
+  return Product.find({}).exec();
+};
+
+var getProduct = (id) => {
+  return Product.findOne({"productId" : id}).exec();
+}
 
 
 module.exports.Product = Product;
 module.exports.User = User;
+module.exports.getAllProductListings = getAllProductListings;
+module.exports.getProduct = getProduct;
