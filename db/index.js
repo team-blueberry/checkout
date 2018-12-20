@@ -11,6 +11,7 @@ const db = mongoose.connect(mongo, (err) => {
 });
 
 const productSchema = mongoose.Schema({
+    productId : Number,
     price : Number,
     shippingCost : Number,
     details : String,
@@ -24,12 +25,15 @@ const productSchema = mongoose.Schema({
 });
 
 const userSchema = mongoose.Schema({
+    userID : Number,
     location : String,
     loggedIn : Boolean,
     name : String,
     city : String,
     zip : Number
 });
+
+
 
 
 const Product = mongoose.model('Product', productSchema);
