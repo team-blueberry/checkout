@@ -44,12 +44,23 @@ const User = mongoose.model('User', userSchema);
 var getAllProductListings = () => {
   return Product.find({}).exec();
 };
-
+//get a single product based on the url number(id)
 var getProduct = (id) => {
   return Product.findOne({"productId" : id}).exec();
 }
+//get a random user from user
+var getRandomUser = () => {
+  var rand = Math.floor(Math.random() * 100);
+  return User.findOne().skip(rand).exec();
+}
+
+var getProductWithUser = (id) => {
+
+//  Promise.all()
+}
 
 
+module.exports.getRandomUser = getRandomUser;
 module.exports.Product = Product;
 module.exports.User = User;
 module.exports.getAllProductListings = getAllProductListings;
