@@ -29,6 +29,10 @@ app.get('/listing', (req,res) => {
 //get single listing based on id number and random user
 app.get('/listing/:number', (req,res) => {
   let { number } = req.params
+  if (number > 100 || number <= 0) {
+    res.redirect('/');
+    return;
+  }
   Promise.all([getRandomUser(),getProduct(number)]) // returns [user,product];
   .then(values => {
     res.send(values);
