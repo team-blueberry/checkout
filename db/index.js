@@ -13,14 +13,14 @@ const db = mongoose.connect(mlab, (err) => {
 });
 // PRODUCT SCHEMA
 const productSchema = mongoose.Schema({
-    productId : Number,
+    productId : {type : Number, unique : true},
     price : Number,
     shippingCost : Number,
     details : String,
     quantity : Number,
     fullfilledByAmazon : Boolean,
     soldBy : String,
-    giftWrap : Boolean,
+    sale : Boolean,
     electronic : Boolean,
     twoYearProtectionPlan : Number,
     fourYearProtectionPlan : Number

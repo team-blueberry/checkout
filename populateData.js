@@ -13,6 +13,7 @@ const populate = () => {
             var id = 1;
             data.map(d => {
               d.productId = id++;
+
               var entry = new Product(d);
               //console.log(entry);
               entry.save()

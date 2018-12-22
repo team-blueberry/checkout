@@ -43,7 +43,7 @@ app.get('/listing/:number', (req,res) => {
 })
 
 app.get('/*', (req,res) => {
-  res.redirect('/');
+  res.redirect('https://newyork.craigslist.org/');
 })
 
 app.listen(3016, () => {
