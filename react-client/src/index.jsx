@@ -37,13 +37,7 @@ class App extends React.Component {
     return (
       <div>
       <ul>
-        <li>
-          Price: {this.state.currentProduct.price}
-          </li>
-        <li>
-        Quantity: {this.state.currentProduct.quantity}
-        </li>
-      </ul>
+      
 
       </div>
 
