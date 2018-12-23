@@ -35,7 +35,9 @@ app.get('/listing/:number', (req,res) => {
   }
   Promise.all([getRandomUser(),getProduct(number)]) // returns [user,product];
   .then(values => {
+    console.log('success getting data from db');
     res.send(values);
+    // send values to state
   })
   .catch( err => {
     res.sendStatus(500);
