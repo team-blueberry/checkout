@@ -30,13 +30,13 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getProduct(83);
+    this.getProduct(33);
   }
 
 
   render() {
     return (
-      <div>
+      <div className="mainComponent">
         <div className="priceComponent">
         <Price price={this.state.currentProduct.price} sale={this.state.currentProduct.sale} salePercent={this.state.currentProduct.salePercent} quantity={this.state.currentProduct.quantity} />
         </div>

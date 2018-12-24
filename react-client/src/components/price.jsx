@@ -43,7 +43,7 @@ class Price extends React.Component {
     this.setState({
       secs :  Math.floor(Math.random() * 60),
       mins :  Math.floor(Math.random() * 60),
-      itemsSold : Math.floor(Math.random() * 10)
+      itemsSold : 3 //need to make a random number from 1-props.quantity
     });
 
     this.timer();
@@ -54,10 +54,11 @@ class Price extends React.Component {
       <div>
         {(!this.props.sale ? <span id="priceNoSale">${this.props.price}</span> :
         <div id="LightningDeal">
-        Lightning Deal <br></br>
+        <span className="headerOne">Lightning Deal</span> <br></br>
+        <div className="priceSaved">
           <span>${(this.props.price - (this.props.salePercent * this.props.price)).toFixed(2)}</span>
           <span> (Save {(this.props.salePercent * 100)}%) </span>
-
+          </div>
           <div className="percentClaimedBar">
             <div className="filler" style={{width : `${Math.floor(((this.state.itemsSold / this.props.quantity) * 100))}%`}}>
             </div>
@@ -68,7 +69,9 @@ class Price extends React.Component {
           </div>
 
           <div className="timer">
-          {(this.state.activeDeal ? <div><span>{this.state.mins}:</span><span>{this.state.secs}</span></div> : <span id="endDeal">Deal has Ended</span>)}
+          {(this.state.activeDeal ? <div>
+            <span>Ends in {this.state.mins}m </span><span>{this.state.secs}s</span></div> :
+            <span className="endDeal">Deal has Ended</span>)}
           </div>
 
         </div>  )}
