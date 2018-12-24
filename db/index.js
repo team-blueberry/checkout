@@ -23,7 +23,8 @@ const productSchema = mongoose.Schema({
     sale : Boolean,
     electronic : Boolean,
     twoYearProtectionPlan : Number,
-    fourYearProtectionPlan : Number
+    fourYearProtectionPlan : Number,
+    salePercent : Number
 });
 
 // USER SCHEMA

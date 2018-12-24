@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import ReactDOM from 'react-dom';
+import Price from './components/price.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -36,7 +37,10 @@ class App extends React.Component {
   render() {
     return (
       <div>
-          Price 
+      Main Component
+        <div className="priceComponent">
+        <Price price={this.state.currentProduct.price} sale={this.state.currentProduct.sale} salePercent={this.state.currentProduct.salePercent} />
+        </div>
       </div>
 
     )
