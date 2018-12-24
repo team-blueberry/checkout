@@ -55,8 +55,13 @@ class Price extends React.Component {
         {(!this.props.sale ? <span id="priceNoSale">${this.props.price}</span> :
         <div id="LightningDeal">
         Lightning Deal <br></br>
-          <span>${this.props.price - (this.props.salePercent * this.props.price).toFixed(2)}</span>
+          <span>${(this.props.price - (this.props.salePercent * this.props.price)).toFixed(2)}</span>
           <span> (Save {(this.props.salePercent * 100)}%) </span>
+
+          <div className="percentClaimedBar">
+            <div className="filler" style={{width : `${Math.floor(((this.state.itemsSold / this.props.quantity) * 100))}%`}}>
+            </div>
+          </div>
 
           <div className="percentClaimed">
           {Math.floor(((this.state.itemsSold / this.props.quantity) * 100))}% Calimed
