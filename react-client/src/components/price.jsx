@@ -15,6 +15,7 @@ class Price extends React.Component {
   }
 
   timer() {
+    var itemsSoldRate = 10;
     if (this.state.activeDeal) {
       setInterval( () => {
         if (this.state.secs === 0 && this.state.mins === 0) {
@@ -22,6 +23,10 @@ class Price extends React.Component {
          return;
         }
         else if (this.state.secs > 0) {
+          if (this.state.secs % itemsSoldRate === 0) {
+            this.setState({itemsSold: this.state.itemsSold+=1});
+            this.setState({secs: this.state.secs-= 1});
+          }
           this.setState({secs: this.state.secs-= 1});
         }
         else if (this.state.secs === 0 ) {
@@ -35,17 +40,14 @@ class Price extends React.Component {
   }
 
 
-
   componentDidMount() {
     this.setState({
       quantity : this.props.quantity,
-      secs : 3,
-      mins : 0,
-      // Math.floor(Math.random() * 60)
+      secs :  Math.floor(Math.random() * 60),
+      mins :  Math.floor(Math.random() * 60),
     });
 
     this.timer();
-
   }
 
   render() {
@@ -59,7 +61,7 @@ class Price extends React.Component {
         </div>  )}
 
         <div className="timer">
-          <span>{this.state.mins}:</span><span>{this.state.secs}</span>
+        {(this.state.activeDeal ? <div><span>{this.state.mins}:</span><span>{this.state.secs}</span></div> : <span id="endDeal">Deal has Ended</span>)}
         </div>
       </div>
     )
