@@ -5,7 +5,6 @@ class Price extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      quantity : 0,
       itemsSold : 0,
       secs : 59,
       mins : 59,
@@ -18,7 +17,7 @@ class Price extends React.Component {
     var itemsSoldRate = 10;
     if (this.state.activeDeal) {
       setInterval( () => {
-        if (this.state.secs === 0 && this.state.mins === 0) {
+        if ((this.state.secs === 0 && this.state.mins === 0) || this.props.quantity === this.state.itemsSold) {
          this.setState({activeDeal: false});
          return;
         }
@@ -42,9 +41,9 @@ class Price extends React.Component {
 
   componentDidMount() {
     this.setState({
-      quantity : this.props.quantity,
       secs :  Math.floor(Math.random() * 60),
       mins :  Math.floor(Math.random() * 60),
+      itemsSold : Math.floor(Math.random() * 10)
     });
 
     this.timer();
@@ -53,16 +52,21 @@ class Price extends React.Component {
   render() {
     return (
       <div>
-      Lightning Deal
         {(!this.props.sale ? <span id="priceNoSale">${this.props.price}</span> :
         <div id="LightningDeal">
-          <span>${(this.props.salePercent * this.props.price).toFixed(2)}</span>
+        Lightning Deal <br></br>
+          <span>${this.props.price - (this.props.salePercent * this.props.price).toFixed(2)}</span>
           <span> (Save {(this.props.salePercent * 100)}%) </span>
-        </div>  )}
 
-        <div className="timer">
-        {(this.state.activeDeal ? <div><span>{this.state.mins}:</span><span>{this.state.secs}</span></div> : <span id="endDeal">Deal has Ended</span>)}
-        </div>
+          <div className="percentClaimed">
+          {Math.floor(((this.state.itemsSold / this.props.quantity) * 100))}% Calimed
+          </div>
+
+          <div className="timer">
+          {(this.state.activeDeal ? <div><span>{this.state.mins}:</span><span>{this.state.secs}</span></div> : <span id="endDeal">Deal has Ended</span>)}
+          </div>
+
+        </div>  )}
       </div>
     )
   }
