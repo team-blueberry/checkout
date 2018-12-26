@@ -24,7 +24,6 @@ class Price extends React.Component {
         else if (this.state.secs > 0) {
           if (this.state.secs % itemsSoldRate === 0) {
             this.setState({itemsSold: this.state.itemsSold+=1});
-            this.setState({secs: this.state.secs-= 1});
           }
           this.setState({secs: this.state.secs-= 1});
         }
@@ -65,7 +64,7 @@ class Price extends React.Component {
           </div>
 
           <div className="percentClaimed">
-          {Math.floor(((this.state.itemsSold / this.props.quantity) * 100))}% Calimed
+          {Math.floor(((this.state.itemsSold / this.props.quantity) * 100))}% Claimed
           </div>
 
           <div className="timer">

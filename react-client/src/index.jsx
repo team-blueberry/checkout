@@ -30,7 +30,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getProduct(33);
+    this.getProduct(22);
   }
 
 
