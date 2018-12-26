@@ -49,6 +49,7 @@ class Price extends React.Component {
   }
 
   render() {
+    var claimedPercent = Math.floor(((this.state.itemsSold / this.props.quantity) * 100));
     return (
       <div>
         {(!this.props.sale ? <span id="priceNoSale">${this.props.price}</span> :
@@ -59,13 +60,17 @@ class Price extends React.Component {
           <span> (Save {(this.props.salePercent * 100)}%) </span>
           </div>
           <div className="percentClaimedBar">
-            <div className="filler" style={{width : `${Math.floor(((this.state.itemsSold / this.props.quantity) * 100))}%`}}>
+            <div className="filler" style={{width : `${claimedPercent}%`}}>
             </div>
           </div>
-
+          {(!this.state.activeDeal ? <div className="endDeal">
+          {claimedPercent}% Claimed
+          </div> :
           <div className="percentClaimed">
-          {Math.floor(((this.state.itemsSold / this.props.quantity) * 100))}% Claimed
+          {claimedPercent}% Claimed
           </div>
+          )}
+
 
           <div className="timer">
           {(this.state.activeDeal ? <div>

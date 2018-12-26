@@ -36,27 +36,16 @@ class App extends React.Component {
 
   render() {
     return (
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <div>
-
-
-=======
-=======
->>>>>>> priceComponent
       <div className="mainComponent">
         <div className="priceComponent">
         <Price price={this.state.currentProduct.price} sale={this.state.currentProduct.sale} salePercent={this.state.currentProduct.salePercent} quantity={this.state.currentProduct.quantity} />
         </div>
-<<<<<<< HEAD
->>>>>>> priceComponent
-=======
->>>>>>> priceComponent
       </div>
 
     )
   }
-
 }
+
+
 
 ReactDOM.render(<App />, document.getElementById('app'));
