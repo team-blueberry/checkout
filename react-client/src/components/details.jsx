@@ -5,10 +5,12 @@ const Details = (props) => {
   return(
     <div className={showModal}>
     <section className="detailsModal">
+    <button className="closeButton" onClick={props.toggle}>Close Window</button>
+    <br />
+    <h1> Order With Free Shipping by Amazon </h1>
+    <br />
       {props.shippingDetails}
-
     </section>
-      <button onClick={props.toggle}>Close</button>
     </div>
   )
 }
