@@ -7,7 +7,7 @@ const Details = (props) => {
     <section className="detailsModal">
     <button className="closeButton" onClick={props.toggle}>Close Window</button>
     <br />
-    <h1> Order With Free Shipping by Amazon </h1>
+    <h1> <b>Order With Free Shipping by Amazon </b></h1>
     <br />
       {props.shippingDetails}
       <ul>
