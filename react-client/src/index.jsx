@@ -40,6 +40,7 @@ class App extends React.Component {
         <div className="priceComponent">
         <Price price={this.state.currentProduct.price} sale={this.state.currentProduct.sale} salePercent={this.state.currentProduct.salePercent} quantity={this.state.currentProduct.quantity} />
         </div>
+        
       </div>
 
     )

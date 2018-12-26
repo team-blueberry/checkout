@@ -59,10 +59,12 @@ class Price extends React.Component {
           <span>${(this.props.price - (this.props.salePercent * this.props.price)).toFixed(2)}</span>
           <span> (Save {(this.props.salePercent * 100)}%) </span>
           </div>
+
           <div className="percentClaimedBar">
             <div className="filler" style={{width : `${claimedPercent}%`}}>
             </div>
           </div>
+
           {(!this.state.activeDeal ? <div className="endDeal">
           {claimedPercent}% Claimed
           </div> :
@@ -71,14 +73,14 @@ class Price extends React.Component {
           </div>
           )}
 
-
+        
           <div className="timer">
           {(this.state.activeDeal ? <div>
             <span>Ends in {this.state.mins}m </span><span>{this.state.secs}s</span></div> :
             <span className="endDeal">Deal has Ended</span>)}
           </div>
-
         </div>  )}
+
       </div>
     )
   }

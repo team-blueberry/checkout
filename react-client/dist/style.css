@@ -1,5 +1,5 @@
 .percentClaimedBar {
-  height: 5px;
+  height: 4px;
   width: 100px;
   border-radius: 1px;
   background: #cccccc;
@@ -7,7 +7,7 @@
 }
 
 .filler {
-  background: #666666;
+  background: #1a1a1a;
   height: 100%;
   border-radius: inherit;
   transition: width .2s ease-in;
