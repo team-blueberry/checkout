@@ -19,9 +19,7 @@ class Shipping extends React.Component {
       <div>
       <span className="shippingPrice">& FREE Shipping. </span>
       <a href="#" className="shippingPrice" onClick={this.toggleDetails}>Details</a>
-      <Details show={this.state.showDetails} toggle={this.toggleDetails} shippingDetails={this.props.shippingDetails}>
-      <p> Modal Details</p>
-      </Details>
+      <Details show={this.state.showDetails} toggle={this.toggleDetails} shippingDetails={this.props.shippingDetails} />
       </div>
     )
   }

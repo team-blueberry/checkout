@@ -10,6 +10,9 @@ const Details = (props) => {
     <h1> Order With Free Shipping by Amazon </h1>
     <br />
       {props.shippingDetails}
+      <ul>
+        <li>{props.shippingDetails}</li>
+      </ul>
     </section>
     </div>
   )
