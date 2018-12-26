@@ -5,7 +5,7 @@ var User = require ('./db').User;
 // Connect Mongoose to our local MongoDB via URI specified above and export it below
 // DATA FOR PRODUCTS
 const populate = () => {
-    fs.readFile('data/mockData.json', 'utf-8', function(err, data) {
+    fs.readFile('data/mockDataSale.json', 'utf-8', function(err, data) {
           if (err) {
             console.log(err);
           } else {
@@ -21,6 +21,7 @@ const populate = () => {
               })
               .catch( err => {
                 console.log('error saving');
+                console.log(err);
               });
             });
           }

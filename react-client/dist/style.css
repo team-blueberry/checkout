@@ -1,0 +1,33 @@
+.percentClaimedBar {
+  height: 5px;
+  width: 100px;
+  border-radius: 1px;
+  background: #cccccc;
+  border: 1px solid #cccccc;
+}
+
+.filler {
+  background: #666666;
+  height: 100%;
+  border-radius: inherit;
+  transition: width .2s ease-in;
+}
+
+.priceSaved, .endDeal{
+  color: #B12704;
+  font-style: normal;
+}
+
+.headerOne, .percentClaimed, .timer {
+  font-weight: 400;
+  font-family: Arial,sans-serif;
+}
+
+.mainComponent {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e6e6e6;
+  padding: 10px;
+  width: 200px;
+
+}
