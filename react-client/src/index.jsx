@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import ReactDOM from 'react-dom';
 import Price from './components/price.jsx';
+import Shipping from './components/shipping.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -30,7 +31,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getProduct(22);
+    this.getProduct(21);
   }
 
 
@@ -40,7 +41,11 @@ class App extends React.Component {
         <div className="priceComponent">
         <Price price={this.state.currentProduct.price} sale={this.state.currentProduct.sale} salePercent={this.state.currentProduct.salePercent} quantity={this.state.currentProduct.quantity} />
         </div>
-        
+
+        <div className="shippingComponent">
+        <Shipping shippingDetails={this.state.currentProduct.details}/>
+        </div>
+
       </div>
 
     )
