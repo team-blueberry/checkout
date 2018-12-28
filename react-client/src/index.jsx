@@ -2,7 +2,11 @@ import React from 'react';
 import axios from 'axios';
 import ReactDOM from 'react-dom';
 import Price from './components/price.jsx';
+<<<<<<< HEAD
+import Shipping from './components/shipping.jsx';
+=======
 import Stock from './components/stock.jsx';
+>>>>>>> master
 
 class App extends React.Component {
   constructor(props) {
@@ -38,14 +42,23 @@ class App extends React.Component {
   render() {
     return (
       <div className="mainComponent">
+
         <div className="priceComponent">
         <Price price={this.state.currentProduct.price} sale={this.state.currentProduct.sale} salePercent={this.state.currentProduct.salePercent} quantity={this.state.currentProduct.quantity} />
         </div>
+<<<<<<< HEAD
+
+        {(!this.state.currentProduct.sale ?
+        <div className="shippingComponent">
+        <Shipping shippingDetails={this.state.currentProduct.details}/>
+        </div> : null )}
+=======
         {(this.state.currentProduct.sale ? null :
           <div className="stockComponent">
           <Stock quantity={this.state.currentProduct.quantity} />
           </div>
         )}
+>>>>>>> master
       </div>
 
     )
