@@ -29,5 +29,13 @@
   border-color: #e6e6e6;
   padding: 10px;
   width: 200px;
+}
 
+.inStock {
+  color : green;
+}
+
+.limitedStock {
+  color : #B12704;
+  font-family: Arial,sans-serif;
 }

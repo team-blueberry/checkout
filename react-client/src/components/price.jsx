@@ -52,7 +52,7 @@ class Price extends React.Component {
     var claimedPercent = Math.floor(((this.state.itemsSold / this.props.quantity) * 100));
     return (
       <div>
-        {(!this.props.sale ? <span id="priceNoSale">${this.props.price}</span> :
+        {(!this.props.sale ? <span className="limitedStock">${this.props.price}</span> :
         <div id="LightningDeal">
         <span className="headerOne">Lightning Deal</span> <br></br>
         <div className="priceSaved">
@@ -73,7 +73,7 @@ class Price extends React.Component {
           </div>
           )}
 
-        
+
           <div className="timer">
           {(this.state.activeDeal ? <div>
             <span>Ends in {this.state.mins}m </span><span>{this.state.secs}s</span></div> :
