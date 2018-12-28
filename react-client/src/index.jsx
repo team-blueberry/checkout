@@ -11,7 +11,8 @@ class App extends React.Component {
     this.state = {
       currentProduct : {},
       currentUser : {},
-      product : {}
+      product : {},
+      productId : 39
     }
     this.getProduct = this.getProduct.bind(this);
   }
@@ -32,14 +33,13 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getProduct(87);
+    this.getProduct(this.state.productId);
   }
 
 
   render() {
     return (
       <div className="mainComponent">
-
         <div className="priceComponent">
         <Price price={this.state.currentProduct.price} sale={this.state.currentProduct.sale} salePercent={this.state.currentProduct.salePercent} quantity={this.state.currentProduct.quantity} />
         </div>
@@ -55,7 +55,6 @@ class App extends React.Component {
         </div>
           : null )}
       </div>
-
     )
   }
 }

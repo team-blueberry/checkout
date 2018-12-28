@@ -42,7 +42,7 @@ class Price extends React.Component {
     this.setState({
       secs :  Math.floor(Math.random() * 60),
       mins :  Math.floor(Math.random() * 60),
-      itemsSold : 3 //need to make a random number from 1-props.quantity
+      itemsSold : 1 //need to make a random number from 1-props.quantity
     });
 
     this.timer();
@@ -50,6 +50,7 @@ class Price extends React.Component {
 
   render() {
     var claimedPercent = Math.floor(((this.state.itemsSold / this.props.quantity) * 100));
+    claimedPercent = Math.min(Math.max(parseInt(claimedPercent), 0), 100);
     return (
       <div>
         {(!this.props.sale ? <span className="limitedStock">${this.props.price}</span> :
