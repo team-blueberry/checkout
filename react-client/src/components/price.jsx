@@ -52,11 +52,7 @@ class Price extends React.Component {
     var claimedPercent = Math.floor(((this.state.itemsSold / this.props.quantity) * 100));
     return (
       <div>
-<<<<<<< HEAD
-        {(!this.props.sale ? <span className="priceNoSale">${this.props.price}</span> :
-=======
         {(!this.props.sale ? <span className="limitedStock">${this.props.price}</span> :
->>>>>>> master
         <div id="LightningDeal">
         <span className="headerOne">Lightning Deal</span> <br></br>
         <div className="priceSaved">

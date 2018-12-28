@@ -13,7 +13,7 @@
   transition: width .2s ease-in;
 }
 
-.priceSaved, .endDeal, {
+.priceSaved, .endDeal {
   color: #B12704;
   font-size: 13px;
   font-weight: 400;
@@ -39,7 +39,6 @@
   width: 200px;
 }
 
-<<<<<<< HEAD
 .display-block {
   display: block;
 }
@@ -53,12 +52,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-=======
+}
 .inStock {
   color : green;
 }
->>>>>>> master
-
 .limitedStock {
   color : #B12704;
   font-family: Arial,sans-serif;
