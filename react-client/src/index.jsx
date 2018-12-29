@@ -13,7 +13,7 @@ class App extends React.Component {
       currentProduct : {},
       currentUser : {},
       product : {},
-      productId : 38
+      productId : 39
     }
     this.getProduct = this.getProduct.bind(this);
   }
