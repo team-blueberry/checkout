@@ -75,6 +75,12 @@ left: 50%;
 transform: translate(-50%,-50%);
 }
 
+.protection {
+  padding-top: 10px;
+}
+.check {
+  background-color: blue;
+}
 .closeButton {
   color: blue;
   transition-duration: 0.4s;
