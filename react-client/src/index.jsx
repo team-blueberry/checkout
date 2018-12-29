@@ -5,6 +5,7 @@ import Price from './components/price.jsx';
 import Shipping from './components/shipping.jsx';
 import Stock from './components/stock.jsx';
 import SoldBy from './components/soldBy.jsx';
+import QuantityDropDown from './components/quantity.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class App extends React.Component {
       currentProduct : {},
       currentUser : {},
       product : {},
-      productId : 39
+      productId : 38
     }
     this.getProduct = this.getProduct.bind(this);
   }
@@ -53,6 +54,7 @@ class App extends React.Component {
           <div className="stockComponent">
             <Stock quantity={this.state.currentProduct.quantity} />
             <SoldBy seller={this.state.currentProduct.soldBy} fba={this.state.currentProduct.fullfilledByAmazon} />
+            <QuantityDropDown maxQuantity={this.state.currentProduct.quantity} />
           </div>
         </div>
           : null )}
