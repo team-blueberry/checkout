@@ -5,11 +5,8 @@ import Price from './components/price.jsx';
 import Shipping from './components/shipping.jsx';
 import Stock from './components/stock.jsx';
 import SoldBy from './components/soldBy.jsx';
-<<<<<<< HEAD
 import QuantityDropDown from './components/quantity.jsx';
-=======
 import ProtectionPlan from './components/protectionPlan.jsx';
->>>>>>> protectionPlan
 
 class App extends React.Component {
   constructor(props) {
@@ -58,12 +55,8 @@ class App extends React.Component {
           <div className="stockComponent">
             <Stock quantity={this.state.currentProduct.quantity} />
             <SoldBy seller={this.state.currentProduct.soldBy} fba={this.state.currentProduct.fullfilledByAmazon} />
-<<<<<<< HEAD
             <QuantityDropDown maxQuantity={this.state.currentProduct.quantity} />
-=======
-
             <ProtectionPlan fourYear={this.state.currentProduct.fourYearProtectionPlan} twoYear={this.state.currentProduct.twoYearProtectionPlan} isElectronic={this.state.currentProduct.electronic}/>
->>>>>>> protectionPlan
           </div>
         </div>
           : null )}
