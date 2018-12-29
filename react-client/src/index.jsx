@@ -7,6 +7,7 @@ import Stock from './components/stock.jsx';
 import SoldBy from './components/soldBy.jsx';
 import QuantityDropDown from './components/quantity.jsx';
 import ProtectionPlan from './components/protectionPlan.jsx';
+import CheckoutButtons from './components/checkoutButtons.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -57,6 +58,7 @@ class App extends React.Component {
             <SoldBy seller={this.state.currentProduct.soldBy} fba={this.state.currentProduct.fullfilledByAmazon} />
             <QuantityDropDown maxQuantity={this.state.currentProduct.quantity} />
             <ProtectionPlan fourYear={this.state.currentProduct.fourYearProtectionPlan} twoYear={this.state.currentProduct.twoYearProtectionPlan} isElectronic={this.state.currentProduct.electronic}/>
+            <CheckoutButtons loggedIn={this.state.currentUser.loggedIn}/>
           </div>
         </div>
           : null )}
