@@ -74,11 +74,21 @@ top: 50%;
 left: 50%;
 transform: translate(-50%,-50%);
 }
+<<<<<<< HEAD
 .dropdown {
   padding-top: 7px;
 }
 #quantityDropDown {
   width: 35px;
+=======
+
+.protection {
+  padding-top: 10px;
+}
+
+.check {
+  background-color: blue;
+>>>>>>> protectionPlan
 }
 .closeButton {
   color: blue;
