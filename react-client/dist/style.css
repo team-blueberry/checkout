@@ -13,6 +13,29 @@
   transition: width .2s ease-in;
 }
 
+#checkoutButton {
+  width: 100%;
+  height: 30px;
+  background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+  border-color: black;
+  font-family: Arial,sans-serif;
+}
+
+#oneClickCheckout {
+  background: linear-gradient(to bottom,#f6c88f,#ed9220);
+  width: 100%;
+  height: 30px;
+  font-family: Arial,sans-serif;
+  border-color: black;
+}
+.buttons {
+  padding-top: 10px;
+}
+
+#checkoutButton:hover {
+  background-color: #ecae13;
+}
+
 .priceSaved, .endDeal {
   color: #B12704;
   font-size: 13px;
@@ -78,7 +101,7 @@ transform: translate(-50%,-50%);
   padding-top: 7px;
 }
 #quantityDropDown {
-  width: 35px;
+  width: 45px;
 }
 .protection {
   padding-top: 10px;
@@ -100,4 +123,9 @@ h1 {
 }
 a {
   color: blue;
+}
+hr {
+  display: block;
+  border-width: 1px;
+  border-color: #f2f2f2;
 }
