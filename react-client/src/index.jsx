@@ -8,6 +8,8 @@ import SoldBy from './components/soldBy.jsx';
 import QuantityDropDown from './components/quantity.jsx';
 import ProtectionPlan from './components/protectionPlan.jsx';
 import CheckoutButtons from './components/checkoutButtons.jsx';
+import ShipTo from './components/shipTo.jsx';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -53,7 +55,7 @@ class App extends React.Component {
             <Shipping shippingDetails={this.state.currentProduct.details}/>
           </div>
 
-          <div className="stockComponent">
+          <div className="defaultView">
             <Stock quantity={this.state.currentProduct.quantity} />
             <SoldBy seller={this.state.currentProduct.soldBy} fba={this.state.currentProduct.fullfilledByAmazon} />
             <QuantityDropDown maxQuantity={this.state.currentProduct.quantity} />
@@ -62,6 +64,9 @@ class App extends React.Component {
           </div>
         </div>
           : null )}
+          <div className="shippingTo">
+            <ShipTo name={this.state.currentUser.name} city={this.state.currentUser.city} zip={this.state.currentUser.zip} />
+          </div>
       </div>
     )
   }
