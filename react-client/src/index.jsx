@@ -64,7 +64,7 @@ class App extends React.Component {
           </div>
         </div>
           : null )}
-          <div className="shippingTo">
+          <div>
             <ShipTo name={this.state.currentUser.name} city={this.state.currentUser.city} zip={this.state.currentUser.zip} />
           </div>
       </div>

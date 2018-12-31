@@ -4,8 +4,8 @@ const SoldBy = (props) => {
   return (
     <div className="solBy">
     <span> Sold by </span>
-    <a href="#">{props.seller} </a>
-    {(props.fba ? <span>and <a href="#"> Fulfilled by Amazon</a></span> : null)}
+    <span className='linkClick'>{props.seller} </span>
+    {(props.fba ? <span>and <span className="linkClick"> Fulfilled by Amazon</span></span> : null)}
     </div>
   )
 }
