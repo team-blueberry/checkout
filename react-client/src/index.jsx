@@ -9,6 +9,7 @@ import QuantityDropDown from './components/quantity.jsx';
 import ProtectionPlan from './components/protectionPlan.jsx';
 import CheckoutButtons from './components/checkoutButtons.jsx';
 import ShipTo from './components/shipTo.jsx';
+import AddToList from './components/addToList.jsx';
 
 
 class App extends React.Component {
@@ -18,7 +19,7 @@ class App extends React.Component {
       currentProduct : {},
       currentUser : {},
       product : {},
-      productId : 38  
+      productId : 38
     }
     this.getProduct = this.getProduct.bind(this);
   }
@@ -67,6 +68,11 @@ class App extends React.Component {
           <div className="shippingTo">
             <ShipTo name={this.state.currentUser.name} city={this.state.currentUser.city} zip={this.state.currentUser.zip} />
           </div>
+          {(!this.state.currentProduct.sale ?
+            <div>
+              <AddToList loggedIn={this.state.currentUser.loggedIn} />
+            </div> :
+            null )}
       </div>
     )
   }
