@@ -65,13 +65,18 @@ padding-top: 10px;
   font-size: 16px;
 }
 
-.headerOne, .percentClaimed, .timer, .shippingPrice {
+.percentClaimed, .timer, .shippingPrice {
   font-size: 13px;
   font-weight: 500;
   font-family: Arial,sans-serif;
   padding-top: 5px;
 }
-
+.headerOne {
+  font-size: 13px;
+  font-weight: 500;
+  font-family: Arial,sans-serif;
+  padding-top: 5px;
+}
 .mainComponent {
   border-style: solid;
   border-width: 1px;

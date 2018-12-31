@@ -58,10 +58,10 @@ class Price extends React.Component {
       <div>
         {(!this.props.sale ? <span className="limitedStock">${this.props.price}</span> :
         <div id="LightningDeal">
-        <span className="headerOne"><b>Lightning Deal</b></span> <br></br>
-        <div className="priceSaved">
-          <span>${(this.props.price - (this.props.salePercent * this.props.price)).toFixed(2)}</span>
-          <span> (Save {(this.props.salePercent * 100)}%) </span>
+          <span className="headerOne"><b>Lightning Deal</b></span> <br></br>
+          <div className="priceSaved">
+            <span>${(this.props.price - (this.props.salePercent * this.props.price)).toFixed(2)}</span>
+            <span> (Save {(this.props.salePercent * 100)}%) </span>
           </div>
 
           <div className="percentClaimedBar">
