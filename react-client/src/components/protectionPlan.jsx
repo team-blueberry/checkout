@@ -22,12 +22,12 @@ class ProtectionPlan extends React.Component {
       <b>Add a Protection Plan: </b>
       <div>
         <input type="radio" id="four" name="drone" value="four" className="selectedOption"/>
-        <label for="four"><a href="#">4-Year Protection</a><span> for </span> <span className="priceNoSale">${this.props.fourYear}</span></label>
+        <label for="four"><span className="linkClick">4-Year Protection</span><span> for </span> <span className="priceNoSale">${this.props.fourYear}</span></label>
       </div>
 
       <div>
         <input type="radio" id="two" name="drone" value="two" className="selectedOption"/>
-        <label for="two"><a href="#">2-Year Protection</a><span> for </span> <span className="priceNoSale">${this.props.twoYear}</span></label>
+        <label for="two"><span className="linkClick">2-Year Protection</span><span> for </span> <span className="priceNoSale">${this.props.twoYear}</span></label>
       </div>
     </div>
       )

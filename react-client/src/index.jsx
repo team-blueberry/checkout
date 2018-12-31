@@ -18,7 +18,7 @@ class App extends React.Component {
       currentProduct : {},
       currentUser : {},
       product : {},
-      productId : 38
+      productId : 39
     }
     this.getProduct = this.getProduct.bind(this);
   }
@@ -64,7 +64,7 @@ class App extends React.Component {
           </div>
         </div>
           : null )}
-          <div>
+          <div className="shippingTo">
             <ShipTo name={this.state.currentUser.name} city={this.state.currentUser.city} zip={this.state.currentUser.zip} />
           </div>
       </div>

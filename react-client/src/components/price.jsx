@@ -17,7 +17,10 @@ class Price extends React.Component {
     var itemsSoldRate = 10;
     if (this.state.activeDeal) {
       setInterval( () => {
-        if ((this.state.secs === 0 && this.state.mins === 0) || this.props.quantity === this.state.itemsSold) {
+        if (!this.state.activeDeal) {
+          return;
+        }
+        else if ((this.state.secs === 0 && this.state.mins === 0) || this.props.quantity === this.state.itemsSold) {
          this.setState({activeDeal: false});
          return;
         }
@@ -55,7 +58,7 @@ class Price extends React.Component {
       <div>
         {(!this.props.sale ? <span className="limitedStock">${this.props.price}</span> :
         <div id="LightningDeal">
-        <span className="headerOne">Lightning Deal</span> <br></br>
+        <span className="headerOne"><b>Lightning Deal</b></span> <br></br>
         <div className="priceSaved">
           <span>${(this.props.price - (this.props.salePercent * this.props.price)).toFixed(2)}</span>
           <span> (Save {(this.props.salePercent * 100)}%) </span>

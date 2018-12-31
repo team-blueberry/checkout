@@ -1,6 +1,6 @@
 .percentClaimedBar {
   height: 4px;
-  width: 100px;
+  width: 200px;
   border-radius: 1px;
   background: #cccccc;
   border: 1px solid #cccccc;
@@ -9,6 +9,7 @@
 .filler {
   background: #1a1a1a;
   height: 100%;
+  width: 100%;
   border-radius: inherit;
   transition: width .2s ease-in;
 }
@@ -28,6 +29,10 @@
   font-family: Arial,sans-serif;
   border-color: black;
 }
+.shippingTo {
+font-size: 13px;
+padding-top: 10px;
+}
 .buttons {
   padding-top: 10px;
 }
@@ -40,11 +45,19 @@
   background: linear-gradient(to bottom,#f0c14b,#f7dfa5);
 }
 
-.priceSaved, .endDeal {
+.priceSaved {
   color: #B12704;
   font-size: 16px;
   font-weight: 400;
   font-family: Arial,sans-serif;
+  padding-bottom: 15px;
+}
+.endDeal {
+  color: #B12704;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: Arial,sans-serif;
+  padding-top: 5px;
 }
 .priceNoSale {
   color: #B12704;
@@ -53,9 +66,10 @@
 }
 
 .headerOne, .percentClaimed, .timer, .shippingPrice {
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 13px;
+  font-weight: 500;
   font-family: Arial,sans-serif;
+  padding-top: 5px;
 }
 
 .mainComponent {
