@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const mongo = 'mongodb://localhost/amazonFEC';
 //const {mlabUsername, mlabPassword} = require('../config.js');
 
-console.log(process.env);
+console.log('env. = ', process.env.MLABURL);
 if (process.env.MLABURL) {
   mongoose.connect(process.env.MLABURL, err => {
     if (err) console.log(err);
