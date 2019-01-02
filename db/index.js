@@ -1,7 +1,7 @@
 //db schema
 const mongoose = require('mongoose');
 const mongo = 'mongodb://localhost/amazonFEC';
-const {mlabUsername, mlabPassword} = require('../config.js');
+//const {mlabUsername, mlabPassword} = require('../config.js');
 
 console.log(process.env);
 if (process.env.MLABURL) {
