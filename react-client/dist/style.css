@@ -65,6 +65,19 @@ padding-top: 10px;
   font-size: 16px;
 }
 
+.addToListButton {
+  width: 100%;
+  background: linear-gradient(to bottom,#f7f8fa,#e7e9ec);
+  text-align: left;
+  text-indent: 5px;
+  height: 25px;
+  font-family: Arial, sans-serif;
+}
+
+.addToListButton:hover {
+  background: linear-gradient(to bottom,#e7e9ec,#f7f8fa);
+}
+
 .percentClaimed, .timer, .shippingPrice {
   font-size: 13px;
   font-weight: 500;
@@ -155,6 +168,7 @@ transform: translate(-50%,-50%);
 .linkClick:hover {
   color: #B12704;
   text-decoration: underline;
+  cursor: pointer;
 }
 h1 {
   font-weight: 400;
