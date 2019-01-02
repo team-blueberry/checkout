@@ -41,7 +41,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getProduct(this.state.productId);
+    var num = Math.floor((Math.Random() * 100) + 1);
+    this.getProduct(num);
   }
 
 
