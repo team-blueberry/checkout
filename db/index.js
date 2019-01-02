@@ -2,15 +2,22 @@
 const mongoose = require('mongoose');
 const mongo = 'mongodb://localhost/amazonFEC';
 const {mlabUsername, mlabPassword} = require('../config.js');
-const mlab = `mongodb://${mlabUsername}:${mlabPassword}@ds111638.mlab.com:11638/amazon-fec`;
 
+console.log(process.env);
+if (process.env.MLABURL) {
+  mongoose.connect(process.env.MLABURL, err => {
+    if (err) console.log(err);
+  });
+}
+//const mlab = `mongodb://${mlabUsername}:${mlabPassword}@ds111638.mlab.com:11638/amazon-fec`;
 
-const db = mongoose.connect(mlab, (err) => {
-  if (err) console.log(err)
-  else {
-    console.log('success connecting');
-  }
-});
+// const db = mongoose.connect(mlab, (err) => {
+//   if (err) console.log(err)
+//   else {
+//     console.log('success connecting');
+//   }
+// });
+
 // PRODUCT SCHEMA
 const productSchema = mongoose.Schema({
     productId : {type : Number, unique : true},
