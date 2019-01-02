@@ -66,7 +66,7 @@ class App extends React.Component {
         </div>
           : null )}
           <div className="shippingTo">
-            <ShipTo name={this.state.currentUser.name} city={this.state.currentUser.city} zip={this.state.currentUser.zip} />
+            <ShipTo loggedIn={this.state.currentUser.loggedIn} name={this.state.currentUser.name} city={this.state.currentUser.city} zip={this.state.currentUser.zip} />
           </div>
           {(!this.state.currentProduct.sale ?
             <div>
