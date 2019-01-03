@@ -44,9 +44,9 @@ app.get('/listing/:number', (req,res) => {
   })
 })
 
-app.get('/*', (req,res) => {
-  res.redirect('https://newyork.craigslist.org/');
-})
+// app.get('/*', (req,res) => {
+//   res.redirect('https://newyork.craigslist.org/');
+// })
 
 app.listen(3016, () => {
   console.log('listening to port 3016');
