@@ -4,16 +4,16 @@ const getAllProductListings = require('../db').getAllProductListings;
 const getProduct = require('../db').getProduct;
 const getRandomUser = require('../db').getRandomUser;
 const bodyParser = require('body-parser');
-const compression = require('compression');
+// const compression = require('compression');
 
 app.use(express.static(__dirname + '../react-client/dist/'));
 app.use(bodyParser.json());
 
 //app.use(compression());
-
-  app.get('/', (req,res) => {
-
-  });
+  //
+  // app.get('/', (req,res) => {
+  //
+  // });
 
 //get all product listings
 app.get('/listing', (req,res) => {
@@ -22,7 +22,6 @@ app.get('/listing', (req,res) => {
     console.log('success getting data from db');
     res.send(data); //array of product data
     res.sendStatus(200);
-    res.end();// ----
   })
   .catch(err => {
     console.log('error with getting porduct listing from db');
