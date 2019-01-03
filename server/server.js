@@ -11,9 +11,9 @@ app.use(bodyParser.json());
 
 //app.use(compression());
 
-// app.get('/', (req,res) => {
-//
-// });
+  app.get('/', (req,res) => {
+
+  });
 
 //get all product listings
 app.get('/listing', (req,res) => {
