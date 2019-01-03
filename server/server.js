@@ -22,6 +22,7 @@ app.get('/listing', (req,res) => {
     console.log('success getting data from db');
     res.send(data); //array of product data
     res.sendStatus(200);
+    res.end();// ----
   })
   .catch(err => {
     console.log('error with getting porduct listing from db');
