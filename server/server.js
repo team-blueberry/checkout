@@ -10,6 +10,15 @@ app.use(compression());
 app.use(express.static(__dirname + '/../react-client/dist/'));
 app.use(bodyParser.json());
 
+
+app.use((req, res, next) => {
+ res.header("Access-Control-Allow-Origin", "*");
+ res.header(
+   "Access-Control-Allow-Headers",
+   "Origin, X-Requested-With, Content-Type, Accept"
+ );
+ next();
+});
   //
   // app.get('/', (req,res) => {
   //
@@ -50,14 +59,7 @@ app.get('/listing/:number', (req,res) => {
 // app.get('/*', (req,res) => {
 //   res.redirect('https://newyork.craigslist.org/');
 // })
-app.use((req, res, next) => {
- res.header("Access-Control-Allow-Origin", "*");
- res.header(
-   "Access-Control-Allow-Headers",
-   "Origin, X-Requested-With, Content-Type, Accept"
- );
- next();
-});
+
 
 app.listen(3016, () => {
   console.log('listening to port 3016');
