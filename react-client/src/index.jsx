@@ -24,7 +24,7 @@ class App extends React.Component {
   }
 
   getProduct(id) {
-    axios.get(`/listing${id}`)
+    axios.get(`/listing/${id}`)
     .then(res => {
       this.setState({
         product : res.data,
