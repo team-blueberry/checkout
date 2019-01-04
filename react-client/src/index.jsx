@@ -18,8 +18,7 @@ class App extends React.Component {
     this.state = {
       currentProduct : {},
       currentUser : {},
-      product : {},
-      productId : 38
+      product : {}
     }
     this.getProduct = this.getProduct.bind(this);
   }
@@ -43,8 +42,6 @@ class App extends React.Component {
   componentDidMount() {
     let url = document.URL.split('?')[1]
     this.getProduct(url);
-    // var num = Math.floor((Math.random() * 100) + 1);
-    // this.getProduct(num);
   }
 
 
