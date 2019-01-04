@@ -24,7 +24,7 @@ class App extends React.Component {
   }
 
   getProduct(id) {
-    axios.get(`http://ec2-3-83-149-86.compute-1.amazonaws.com:3016/listing/${id}`)
+    axios.get(`/listing${id}`)
     .then(res => {
       this.setState({
         product : res.data,
