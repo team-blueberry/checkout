@@ -41,8 +41,10 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    var num = Math.floor((Math.random() * 100) + 1);
-    this.getProduct(num);
+    let url = document.URL.split('?')[1]
+    this.getProduct(url);
+    // var num = Math.floor((Math.random() * 100) + 1);
+    // this.getProduct(num);
   }
 
 
