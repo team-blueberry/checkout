@@ -18,7 +18,7 @@ class ProtectionPlan extends React.Component {
   render() {
     if (this.props.isElectronic) {
     return (
-    <div className="protection">
+    <div className="protectionNweiran">
       <b>Add a Protection Plan: </b>
       <div>
         <input type="radio" id="four" name="drone" value="four" className="selectedOption"/>
