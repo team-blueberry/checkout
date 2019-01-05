@@ -24,7 +24,7 @@ class App extends React.Component {
   }
 
   getProduct(id) {
-    axios.get(`http://ec2-3-83-149-86.compute-1.amazonaws.com:3016/listing/${id}`)
+      axios.get(`http://ec2-3-83-149-86.compute-1.amazonaws.com:3016/listing/${id}`)
     .then(res => {
       this.setState({
         product : res.data,
@@ -57,7 +57,7 @@ class App extends React.Component {
             <Shipping shippingDetails={this.state.currentProduct.details}/>
           </div>
 
-          <div className="defaultView">
+          <div className="defaultViewNweiran">
             <Stock quantity={this.state.currentProduct.quantity} />
             <SoldBy seller={this.state.currentProduct.soldBy} fba={this.state.currentProduct.fullfilledByAmazon} />
             <QuantityDropDown maxQuantity={this.state.currentProduct.quantity} />
