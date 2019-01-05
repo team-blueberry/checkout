@@ -99,6 +99,9 @@ padding-top: 10px;
   position: absolute;
   right: 25px;
   top: 25px;
+  -webkit-box-sizing: content-box;
+
+
 }
 
 .display-block {
