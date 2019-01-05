@@ -32,9 +32,13 @@
 .shippingTo {
 font-size: 13px;
 padding-top: 10px;
+-webkit-box-sizing: content-box;
+
 }
 .buttonsNweiran {
   padding-top: 10px;
+  -webkit-box-sizing: content-box;
+
 }
 #oneClickCheckout:hover {
   background: linear-gradient(to bottom,#ed9220,#f6c88f);
@@ -155,6 +159,7 @@ transform: translate(-50%,-50%);
   padding-top: 20px;
   font-family: Arial,sans-serif;
   color: blue;
+  -webkit-box-sizing: content-box;
 }
 .check {
   background-color: blue;
