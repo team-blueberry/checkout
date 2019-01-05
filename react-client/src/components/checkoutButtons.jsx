@@ -3,7 +3,7 @@ import React from 'react';
 
 const CheckoutButtons = ({loggedIn}) => {
   return (
-    <div className="buttons">
+    <div className="buttonsNweiran">
     <button type="button" id="checkoutButton"><b>Add To Cart</b></button>
     <hr / >
     {(!loggedIn ?
