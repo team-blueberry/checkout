@@ -44,8 +44,12 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    let url = document.URL.split('?')[1]
-    this.getProduct(url);
+    // let url = document.URL.split('/')[1]
+    // this.getProduct(url);
+
+    let id = document.location.pathname;
+       id = parseInt(id.match(/\d+/g));
+      this.getProduct(id);
   }
 
 

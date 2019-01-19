@@ -19,7 +19,8 @@ const pool = new Pool({
 });
 
 app.use(compression());
-app.use(express.static(__dirname + '/../react-client/dist/'));
+app.use('/:id(\\d+)/', express.static(__dirname + '/../react-client/dist/'));
+app.use('', express.static(__dirname + '/../react-client/dist/'));
 app.use(bodyParser.json());
 
 
