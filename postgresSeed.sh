@@ -1,6 +1,6 @@
 psql postgres;
 
-create database if not exists checkout;
+create database checkout;
 
 \c checkout;
 
@@ -21,3 +21,10 @@ name varchar, city varchar, zip varchar);
 
 grant all on products to helloworld;
 grant all on users to helloworld;
+
+
+/Users/lexisantoro/checkout/productOutput.csv
+
+\copy products from 'checkout/productOutput.csv' DELIMITERS ',' CSV;
+
+\copy users from 'checkout/userOutput.csv' DELIMITERS ',' CSV;

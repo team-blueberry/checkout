@@ -24,7 +24,11 @@ class App extends React.Component {
   }
 
   getProduct(id) {
-      axios.get(`http://ec2-3-83-149-86.compute-1.amazonaws.com:3016/listing/${id}`)
+      axios.get(`/listing/${id}`)
+      // .then(res => {
+      //   console.log(res.data)
+      // })
+      // .catch(console.log('caught it'))
     .then(res => {
       this.setState({
         product : res.data,
@@ -49,7 +53,7 @@ class App extends React.Component {
     return (
       <div className="mainComponent">
         <div className="priceComponent">
-        <Price price={this.state.currentProduct.price} sale={this.state.currentProduct.sale} salePercent={this.state.currentProduct.salePercent} quantity={this.state.currentProduct.quantity} />
+        <Price price={this.state.currentProduct.price} sale={this.state.currentProduct.sale} salePercent={this.state.currentProduct.salepercent * 0.01} quantity={this.state.currentProduct.quantity} />
         </div>
         {(!this.state.currentProduct.sale ?
         <div>
@@ -59,19 +63,19 @@ class App extends React.Component {
 
           <div className="defaultViewNweiran">
             <Stock quantity={this.state.currentProduct.quantity} />
-            <SoldBy seller={this.state.currentProduct.soldBy} fba={this.state.currentProduct.fullfilledByAmazon} />
+            <SoldBy seller={this.state.currentProduct.soldby} fba={this.state.currentProduct.fullfilledbyamazon} />
             <QuantityDropDown maxQuantity={this.state.currentProduct.quantity} />
-            <ProtectionPlan fourYear={this.state.currentProduct.fourYearProtectionPlan} twoYear={this.state.currentProduct.twoYearProtectionPlan} isElectronic={this.state.currentProduct.electronic}/>
+            <ProtectionPlan fourYear={this.state.currentProduct.fouryearprotectionplan} twoYear={this.state.currentProduct.twoyearprotectionplan} isElectronic={this.state.currentProduct.electronic}/>
             <CheckoutButtons loggedIn={this.state.currentUser.loggedIn}/>
           </div>
         </div>
           : null )}
           <div className="shippingTo">
-            <ShipTo loggedIn={this.state.currentUser.loggedIn} name={this.state.currentUser.name} city={this.state.currentUser.city} zip={this.state.currentUser.zip} />
+            <ShipTo loggedIn={this.state.currentUser.loggedin} name={this.state.currentUser.name} city={this.state.currentUser.city} zip={this.state.currentUser.zip} />
           </div>
           {(!this.state.currentProduct.sale ?
             <div>
-              <AddToList loggedIn={this.state.currentUser.loggedIn} />
+              <AddToList loggedIn={this.state.currentUser.loggedin} />
             </div> :
             null )}
       </div>
