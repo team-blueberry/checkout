@@ -38,7 +38,7 @@ app.use((req, res, next) => {
   // });
 
 //get all product listings
-app.get('/checkout', (req,res) => {
+app.get('/api/checkout', (req,res) => {
   getAllProductListings()
   .then(data => {
     console.log('success getting data from db');
@@ -52,7 +52,7 @@ app.get('/checkout', (req,res) => {
 });
 
 //get single listing based on id number and random user
-app.get('/checkout/:number', (req,res) => {
+app.get('/api/checkout/:number', (req,res) => {
   let { number } = req.params
   if (number >= 10000000 || number < 0) {
     res.redirect('/');

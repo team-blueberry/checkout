@@ -24,7 +24,7 @@ class App extends React.Component {
   }
 
   getProduct(id) {
-      axios.get(`/checkout/${id}`)
+      axios.get(`/api/checkout/${id}`)
       // .then(res => {
       //   console.log(res.data)
       // })
