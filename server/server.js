@@ -6,13 +6,16 @@ const getRandomUser = require('../db').getRandomUser;
 const bodyParser = require('body-parser');
 const compression = require('compression');
 const { Pool, Client } = require('pg');
+require('dotenv').config()
+
+console.log(process.env)
 
 const pool = new Pool({
-  user: process.env.USER || 'root',
-  password: process.env.PASSWORD || '',
-  host: process.env.HOST || 'localhost',
-  database: process.env.DATABASE || 'checkout',
-  port: process.env.PORT || 5432
+  user: process.env.PG_USER || 'helloworld',
+  password: process.env.PG_PW || '',
+  host: process.env.PG_HOST || 'localhost',
+  database: process.env.PG_DATABASE || 'checkout',
+  port: process.env.PG_PORT || 5432
 });
 
 app.use(compression());

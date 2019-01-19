@@ -1,13 +1,13 @@
 //db schema
 const { Pool, Client } = require('pg');
 
-const pool = new Pool({
-  user: process.env.USER || 'root',
-  password: process.env.PASSWORD || '',
-  host: process.env.HOST || 'localhost', //could be ip address for hosting
-  database: process.env.DATABASE || 'checkout',
-  port: process.env.PORT || 5432
-});
+// const pool = new Pool({
+//   user: process.env.USER || 'root',
+//   password: process.env.PASSWORD || '',
+//   host: process.env.HOST || 'localhost', //could be ip address for hosting
+//   database: process.env.DATABASE || 'checkout',
+//   port: process.env.PORT || 5432
+// });
 
 //console.log('env. = ', process.env);
  
