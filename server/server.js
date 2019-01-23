@@ -20,7 +20,7 @@ const pool = new Pool({
 
 app.use(compression());
 app.use('/:id(\\d+)/', express.static(__dirname + '/../react-client/dist/'));
-app.use('', express.static(__dirname + '/../react-client/dist/'));
+app.use('/', express.static(__dirname + '/../react-client/dist/'));
 app.use(bodyParser.json());
 
 
@@ -50,6 +50,11 @@ app.get('/api/checkout', (req,res) => {
     console.log(err);
   })
 });
+//loader.io verification
+app.get('/loaderio-e2218df28967e523d961008d06570745/', (req, res) => {
+  res.send('/loaderio-e2218df28967e523d961008d06570745/')
+})
+
 
 //get single listing based on id number and random user
 app.get('/api/checkout/:number', (req,res) => {

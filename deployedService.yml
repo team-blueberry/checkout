@@ -1,0 +1,17 @@
+
+
+config:
+  target: "http://ec2-18-223-214-235.us-east-2.compute.amazonaws.com"
+  phases:
+    - duration: 60
+      arrivalRate: 1000
+  variables:
+    productIds:
+      - ["10032", "2424235", "3575443"]
+      - ["9999999", "677544", "9836"]
+scenarios:
+  - flow:
+      - loop:
+          - get:
+              url: "/api/checkout/{{ $loopElement }}"
+        over: productIds
