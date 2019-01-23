@@ -52,7 +52,7 @@ app.get('/api/checkout', (req,res) => {
 });
 //loader.io verification
 app.get('/loaderio-e2218df28967e523d961008d06570745', (req, res) => {
-  res.send('/loaderio-e2218df28967e523d961008d06570745')
+  res.send('loaderio-e2218df28967e523d961008d06570745')
 })
 
 
